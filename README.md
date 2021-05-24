@@ -75,8 +75,22 @@ LINE平台傳送給Webhook伺服器的HTTP請求本體是包括一個或多個We
 }
 ```
 > #在處理LINE平台的事件請求時，必須以迴圈方式逐一讀取與處理每一個Webhook事件物件，而不是在處理完第一筆資料後便停止了。
-### 
+### 5.瞭解用戶識別碼
+```
+a. 每一個LINE用戶帳號都有一個專屬的內部識別碼，稱為User ID。
+b. User ID與LINE用戶自訂的LINE ID的格式與用途完全不同。
+c. User ID的格式為33個字元的英數字字串，ex: U206d25c2ea6bd87c17655609a1c37cb8。
+```
+```
+d. 如果開發者想要驗證一個字串是否為正確的User ID格式:
 
+        可以使用 "正規表示式"（Regular Expression）「^U[0-9a-f]{32}$」來測試。
+```
+> #同一個公司或組織的User ID都有相同的(公司／組織)專屬的識別碼  
+
+![image](https://i.imgur.com/PFF8c0j.png)
+
+### 6.使用Reply Token的注意事項
 
 
 ## reference
